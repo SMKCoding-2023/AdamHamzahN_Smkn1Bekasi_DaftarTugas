@@ -1,8 +1,14 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
-import { activity } from'~/composables/constants/activity';
+import { useTodoStore } from "~/stores/todo";
 
-const allactivity = ref(activity);
+const Todostore = useTodoStore();
+const allTodo = ref([]);
+
+Todostore.getAllTodo().then(() => {
+allTodo.value = Todostore.todo;
+});
+
+const selectedActivity= ref("");
 </script>
 <template>
     <header class="w-full border-b border-slate-200 py-6">
@@ -23,7 +29,7 @@ const allactivity = ref(activity);
         <div class="container">
             <div class="py-10">
                 <div class="flex gap-6 flex-wrap mx-auto">
-                    <template v-for="(item, index) in allactivity" :key="index">
+                    <template v-for="(item, index) in allTodo" :key="index">
                         <CardsCardActivity :activity="item" class="w-[calc(100%/4-18px)]" />
                     </template>
                 </div>

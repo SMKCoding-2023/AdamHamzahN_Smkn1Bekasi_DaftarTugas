@@ -16,5 +16,10 @@
     "nuxt": "^3.8.2",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "@supabase/supabase-js": "^2.38.5",
+    "pinia": "^2.1.7"
   }
 }
