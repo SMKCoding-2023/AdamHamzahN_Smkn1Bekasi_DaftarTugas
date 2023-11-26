@@ -54,6 +54,13 @@ const createProduct = async () => {
 <template>
     <section class="flex justify-center py-10">
         <div class="w-[500px]">
+            <NuxtLink to="/" class="text-base">
+                <button
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded absolute top-0 left-0 mt-2 ml-2">
+                    Kembali
+                </button>
+            </NuxtLink>
+            <br>
             <h1 class="text-2xl mb-7 font-medium">Create Activity To Do</h1>
             <div v-if="isShowAlert"
                 :class="`p-4 mb-4 text-sm rounded-lg ${isSuccess ? 'bg-green-100 text-green-800' : 'text-red-800 bg-red-100'}`"
@@ -69,8 +76,7 @@ const createProduct = async () => {
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         :placeholder="item.placeholder" :required="item.required">
                 </div>
-                <button type="submit"
-                    class="bg-blue-500 text-white font-semibold py-2 px-4 rounded">
+                <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded">
                     <span v-if="!isLoading">Submit</span>
                     <div v-else class="flex items-center gap-3">
                         <div class="w-5 h-5 rounded-full border-2 border-t-blue-500 animate-spin">

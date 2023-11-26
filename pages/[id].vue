@@ -8,4 +8,5 @@ const product = ref(activity.find((item: Activity) => item.id === id));
 </script>
 <template>
     <DatailActivity :activity="activity" />
+
 </template>
