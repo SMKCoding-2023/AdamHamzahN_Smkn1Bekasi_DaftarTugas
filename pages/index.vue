@@ -15,7 +15,7 @@ const selectedActivity= ref("");
         <div class="container">
             <div class="flex justify-between items-center">
                 <div>
-                    <h1 to="/" class="text-xl font-bold">TODO LIST</h1>
+                    <h1 to="/" class="text-xl font-bold">LIST TUGAS</h1>
                 </div>
                 <nav class="flex items-center gap-6">
                     <NuxtLink to="/tambah" class="text-base">

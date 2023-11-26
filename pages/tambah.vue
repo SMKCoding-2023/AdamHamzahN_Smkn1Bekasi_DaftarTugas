@@ -61,7 +61,7 @@ const createProduct = async () => {
                 </button>
             </NuxtLink>
             <br>
-            <h1 class="text-2xl mb-7 font-medium">Create Activity To Do</h1>
+            <h1 class="text-2xl mb-7 font-medium">Tambahkan Tugas Baru</h1>
             <div v-if="isShowAlert"
                 :class="`p-4 mb-4 text-sm rounded-lg ${isSuccess ? 'bg-green-100 text-green-800' : 'text-red-800 bg-red-100'}`"
                 role="alert">
