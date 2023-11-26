@@ -8,6 +8,7 @@ const props = defineProps({
 console.log(props.activity.name);
 </script> -->
 <script lang="ts" setup>
+import MyButton from '~/components/deleteButton.vue';
 const props = defineProps({
     activity: {
         type: Object,
@@ -25,8 +26,7 @@ const { baseStorageUrl } = useAppConfig();
             <NuxtLink :to="`/${activity.id}`" class="text-base">
                 <button class="bg-green-500 text-white font-semibold py-2 px-4 rounded">ubah</button>
             </NuxtLink>
-            <button class="bg-red-500 text-white font-semibold py-2 px-4 rounded">hapus</button>
-
+            <MyButton :buttonText="'Hapus'" />
 
         </div>
     </section>
