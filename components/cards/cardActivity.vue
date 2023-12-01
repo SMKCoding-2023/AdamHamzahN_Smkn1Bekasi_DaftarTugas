@@ -73,7 +73,9 @@ const deleteActivity = async () => {
     if(konfirmasi == true){
     const activityId = props.activity.id;
     // Lakukan sesuatu dengan activityId
-    TodoStore.deleteTodo(activityId);}
+    TodoStore.deleteTodo(activityId);
+    location.reload();
+}
     else{
 
     };

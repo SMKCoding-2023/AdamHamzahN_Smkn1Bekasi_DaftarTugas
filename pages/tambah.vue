@@ -67,24 +67,26 @@ const createProduct = async () => {
                 role="alert">
                 {{ message }}
             </div>
-            <form @submit.prevent="createProduct">
-                <div class="mb-6" v-for="(item, index) in formCreateTodo" :key="index">
-                    <label :for="item.name" class="block mb-2 text-sm font-medium text-gray-900">
-                        {{ item.label }}
-                    </label>
-                    <input :type="item.type" :id="item.name" v-model="item.value"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        :placeholder="item.placeholder" :required="item.required">
-                </div>
-                <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded">
-                    <span v-if="!isLoading">Submit</span>
-                    <div v-else class="flex items-center gap-3">
-                        <div class="w-5 h-5 rounded-full border-2 border-t-blue-500 animate-spin">
-                        </div>
-                        <span>Loading</span>
+            <div class="border border-gray-500 rounded-md p-10 bg-grey-500">
+                <form @submit.prevent="createProduct" >
+                    <div class="mb-6" v-for="(item, index) in formCreateTodo" :key="index">
+                        <label :for="item.name" class="block mb-2 text-sm font-medium text-gray-900">
+                            {{ item.label }}
+                        </label>
+                        <input :type="item.type" :id="item.name" v-model="item.value"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                            :placeholder="item.placeholder" :required="item.required">
                     </div>
-                </button>
-            </form>
+                    <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded">
+                        <span v-if="!isLoading">Tambah Tugas</span>
+                        <div v-else class="flex items-center gap-3">
+                            <div class="w-5 h-5 rounded-full border-2 border-t-blue-500 animate-spin">
+                            </div>
+                            <span>Loading</span>
+                        </div>
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 </template>

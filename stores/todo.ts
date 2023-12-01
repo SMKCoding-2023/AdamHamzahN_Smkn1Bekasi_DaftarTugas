@@ -26,7 +26,7 @@ export const useTodoStore = defineStore("Todo", {
         },
         async readAllTodo(id : any) {
             const { baseUrl, apikey } = useAppConfig();
-            const { data, error } = await useFetch(`rest/v1/todo?id=eq.${id}&select=*`, {
+            const { data, error } = await useFetch(`/rest/v1/todo?id=eq.${id}&select=*`, {
                 baseURL: baseUrl,
                 method: "GET",
                 headers: {

@@ -4,7 +4,8 @@ import { useTodoStore } from "~/stores/todo";
 const Todostore = useTodoStore();
 const allTodo = ref([]);
 
-Todostore.getAllTodo().then(() => {
+onMounted(async () => {
+    await Todostore.getAllTodo();
     allTodo.value = Todostore.todo;
 });
 
@@ -32,12 +33,12 @@ const selectedActivity = ref("");
                 <div class="flex gap-6 flex-wrap mx-auto">
                     <template v-if="allTodo.length === 0">
                         <h4 class="text-center mx-auto">Belum ada tugas ditambahkan</h4>
-                    </template>
-                    <template v-else>
+                    </template> 
+                     <template v-else>
                         <template v-for="(item, index) in allTodo" :key="index">
-                            <CardsCardActivity :activity="item" class="w-[calc(100%/4-18px)]" />
+                            <CardsCardActivity v-bind:activity="item" class="w-[calc(100%/4-18px)]" />
                         </template>
-                    </template>
+                    </template> 
                 </div>
             </div>
         </div>

@@ -74,7 +74,7 @@ const updateProduct = async () => {
     <DatailActivity :activity="activity" />
     <section class="flex justify-center py-10">
         <div class="w-[500px]">
-            <h1 class="text-2xl mb-7 font-medium">Create Activity To Do</h1>
+            <h1 class="text-2xl mb-7 font-medium">Ubah Tugas</h1>
             <div v-if="isShowAlert"
                 :class="`p-4 mb-4 text-sm rounded-lg ${isSuccess ? 'bg-green-100 text-green-800' : 'text-red-800 bg-red-100'}`"
                 role="alert">
@@ -90,7 +90,7 @@ const updateProduct = async () => {
                         :placeholder="item.placeholder" :required="item.required">
                 </div>
                 <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded">
-                    <span v-if="!isLoading">Submit</span>
+                    <span v-if="!isLoading">Ubah</span>
                     <div v-else class="flex items-center gap-3">
                         <div class="w-5 h-5 rounded-full border-2 border-t-blue-500 animate-spin">
                         </div>
